@@ -7,15 +7,27 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithTitle;
 use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\FromView;
+use Illuminate\Contracts\View\View;
 
-class UsersExport implements FromCollection, WithHeadings, WithTitle
+
+// class UsersExport implements FromCollection, WithHeadings, WithTitle
+class UsersExport implements FromView, WithHeadings, WithTitle
+
 {
 
-    use Exportable;
+    // use Exportable;
 
-    public function collection()
+    // public function collection()
+    // {
+    //     return User::all();
+    // }
+
+    public function view(): View
     {
-        return User::all();
+        return view('exports.users', [
+            'users' => User::all()
+        ]);
     }
 
     public function headings(): array
@@ -36,5 +48,10 @@ class UsersExport implements FromCollection, WithHeadings, WithTitle
 
 	}
 
+
+
 }
+
+
+
 
