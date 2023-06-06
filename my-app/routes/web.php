@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('users',[UsersController::class,'export']);
+
+Route::resource('/users','UsersController');
