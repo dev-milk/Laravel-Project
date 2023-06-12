@@ -8,7 +8,7 @@
 </p>
 
 ## About this Project
-このリポジトリは以下の記事を参考にして作成したものです。
+<p>このリポジトリは以下の記事を参考にして作成したものです。</p>
 https://reffect.co.jp/laravel/laravel_excel_master/
 
 ## About Laravel
